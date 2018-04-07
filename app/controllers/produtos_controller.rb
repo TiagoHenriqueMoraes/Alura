@@ -17,4 +17,7 @@ class ProdutosController < ApplicationController
 		redirect_to root_url
 	end
 
+
+	def busca
+	end
 end
