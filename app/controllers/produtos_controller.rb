@@ -10,6 +10,12 @@ class ProdutosController < ApplicationController
 		produto = Produto.create valores
 		redirect_to root_url
 	end
+
+	def busca
+		nome = params[:nome]
+
+	end
+
 	def destroy
 
 		id = params[:id]
@@ -18,6 +24,5 @@ class ProdutosController < ApplicationController
 	end
 
 
-	def busca
-	end
+	
 end
