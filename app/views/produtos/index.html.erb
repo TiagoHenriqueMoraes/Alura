@@ -1,0 +1,51 @@
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrição</th>
+			<th>Preço</th>
+			<th>Quantidade</th>
+		</tr>	
+	</thead>
+	<tbody >
+		<% @produtos_por_nome.each do |x|%>
+		<tr>
+			<td><%= x.nome%></td>
+			<td><%= x.descricao%></td>
+			<td><%= x.preco%></td>
+			<td><%= x.quantidade%></td>
+			<td>
+				<%= button_to "Remover", x, method: :delete, class: "btn btn-danger",
+														 data: {confirm: "tem ctz que quer remover #{x.nome}?"} %>
+			</td>
+		</tr>				
+		<%end%>
+	</tbody>
+</table>
+
+<table class="table table-bordered">
+
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrição</th>
+			<th>Preço</th>
+			<th>Quantidade</th>
+		</tr>	
+	</thead>
+	<tbody>
+		<% @produtos_por_preco.each do |x|%>
+		<tr>
+			<td><%= x.nome%></td>
+			<td><%= x.descricao%></td>
+			<td><%= x.preco%></td>
+			<td><%= x.quantidade%></td>
+		</tr>
+	</tbody>	
+	<%end%>
+
+</table>
+
+<%= link_to "Adicionar novo Produto", new_produto_path%>
+
